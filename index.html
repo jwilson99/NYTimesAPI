@@ -10,13 +10,33 @@
 	<body>
 		<div class="wrapper">
 			<h1>NEW YORK TIMES SEARCH</h1>
-			<form name="search-form">
+			<form action="/action_page.php" name="search-form">
 				<label for="search-item">Search Item:</label>
-				<input id="search-item" type="text" name"search-item" placeholder="enter item here"/>
+				<input id="search-item" type="text" name="search-item" placeholder="enter item here"/>
 				<br/>
 				<br/>
-				<input type="button" value="Add to List" onclick="processForm()"/>
-				<div id ="checkList"></div>
+				<!-- double arrows for selection # -->
+				<label for="numRecords">Number of Records to Retrieve:</label>
+				<input id="numRecords" type="text" 
+				select name="numRecords"
+				
+				    <option value="volvo">Volvo</option>
+				    <option value="saab">Saab</option>
+				    <option value="fiat" selected>Fiat</option>
+				    <option value="audi">Audi</option>
+				  </select>/>
+				<br/>
+				<br/>
+				<label for="startYr">Start Year (Optional):</label>
+				<input id="startYr" type="text" name="startYr"/>
+				<br/>
+				<br/>
+				<label for="endYr">End Year (Optional):</label>
+				<input id="endYr" type="text" name="endYr"/>
+				<br/>
+				<br/>
+				<input type="button" value="submit" onclick="processForm()"/>
+				<div id ="search"></div>
 				<script type="text/javascript" src="style.js"></script>
 			</form>
 		</div>

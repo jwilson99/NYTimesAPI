@@ -1,6 +1,6 @@
 html{
 	font-family: 'Permanent Marker', cursive;
-		color:#E05F10;
+		color:#2500E2;
 		font-size: 20px;
 		    text-shadow:
 		     3px 3px 0 #fff,
@@ -47,4 +47,15 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+form{
+	text-align: left;
+	margin-left: 1%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#search-item {
+	text-align: center;
 }
