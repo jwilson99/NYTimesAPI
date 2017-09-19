@@ -1,26 +1,34 @@
-// $("button").click(function(e) {
-// var queryVal = $('#search-item').value();
-//     e.preventDefault();
-//     $.ajax({ 
-//         url: "http://api.giphy.com/v1/gifs/search?q=" + input+ "&limit=5&rating=PG&api_key=7faa75150cd64d5599def7be32bdf555",
-//         type: "GET",
-//         data: { 
-//             id: $(this).val(), // < note use of 'this' here
-//             access_token: $("#access_token").val() 
-//         },
-//       })  
-//     //promise
-//     .then(function(response) {
-//     	setImageArray(response);
 
-//     })
+var search = $("#search-item").val();
 
-//     .catch(function(err){
-// 		console.log(err);
+var APIKey = "75d2df1262dd4f54bd6f8ab946d7f9f6";
 
-// 		console.log("Request failed")
+var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key="+ APIKey + "&q=" + search + "&begin_date=2000&end_date=2017";
 
-//     })
-         
-// });
+// var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key="+ APIKey + "&q=" + search + "&begin_date=" + startYear + "&end_date=" + endYear;
+
+
+var startYear;
+
+var endYear;
+
+var limit;
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+}).done(function(response) {
+    console.log(response);
+
+    var result = response.response;
+    console.log(result);
+});
+
+
+function processForm () {
+
+
+
+
+}
 
