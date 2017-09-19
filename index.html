@@ -8,17 +8,47 @@
 		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt" rel="stylesheet">
 	</head>
 	<body>
-		<div class="wrapper">
+		<header>
 			<h1>NEW YORK TIMES SEARCH</h1>
-			<form name="search-form">
+		</header>
+		<div class="wrapper">
+			<form action="/action_page.php" name="search-form">
 				<label for="search-item">Search Item:</label>
-				<input id="search-item" type="text" name"search-item" placeholder="enter item here"/>
+				<input id="search-item" type="text" name="search-item" placeholder="enter item here"/>
 				<br/>
 				<br/>
-				<input type="button" value="Add to List" onclick="processForm()"/>
-				<div id ="checkList"></div>
+				<!-- double arrows for selection # -->
+				<label for="numRecords">Number of Records to Retrieve:</label>
+				<select>
+				    <option value=0>0</option>
+				    <option value=1>1</option>
+				    <option value=2>2</option>
+				    <option value=3>3</option>
+				    <option value=4>4</option>
+				    <option value=5>5</option>
+				    <option value=6>6</option>
+				    <option value=7>7</option>
+				    <option value=8>8</option>
+				    <option value=9>9</option>
+				    <option value=10>10</option>
+				    </select>
+				<br/>
+				<br/>
+				<label for="startYr">Start Year (Optional):</label>
+				<input type="number" min="1851" max="2017" step="1" value=" " id="startYr" name="startYr"/>
+				<!-- 1851 - current year valid entry; confirm valid -->
+				<br/>
+				<br/>
+				<label for="endYr">End Year (Optional):</label>
+				<input type="number" min="1851" max="2017" step="1" value=" " id="startYr" name="endYr"/>
+				<!-- only valid entries >= 1851 && <= current year-->
+				<br/>
+				<br/>
+				<input type="button" value="submit" id="myBtn" onclick="processForm()"/>
+				<div id ="search"></div>
 				<script type="text/javascript" src="style.js"></script>
 			</form>
+			<div id="itemResult"></div>
 		</div>
 	</body>
 </html>
